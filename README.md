@@ -10,7 +10,7 @@ You can download the JavaScript file from the following link:
 http://abicky.github.io/query-matcher/lib/query-matcher.js
 
 
-You can also build the file the following steps:
+You can also build the file by the following steps:
 ```
 $ git clone https://github.com/abicky/query-matcher.git
 $ cd ./query-matcher/
