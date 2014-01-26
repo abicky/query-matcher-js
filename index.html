@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <title>Demo of query-matcher</title>
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="./lib/query-matcher.js"></script>
+  <script>
+  $(function() {
+    var $fruits = $('#fruits-list li');
+    $('#query').on('keyup', function() {
+      var matcher = new QueryMatcher($(this).val());
+      $fruits.each(function() {
+        $(this).css('display', matcher.match($(this).text()) ? 'list-item' : 'none');
+      });
+    });
+  });
+  </script>
+<body>
+<input id="query" type="text" placeholder="filtering query">
+<!-- cf. http://simple.wikipedia.org/wiki/List_of_fruits -->
+<ul id="fruits-list">
+  <li>Apple</li>
+  <li>Apricot</li>
+  <li>Avocado</li>
+  <li>Banana</li>
+  <li>Bell Pepper</li>
+  <li>Bilberry</li>
+  <li>Blackberry</li>
+  <li>Blackcurrant</li>
+  <li>Blood Orange</li>
+  <li>Blueberry</li>
+  <li>Boysenberry</li>
+  <li>Breadfruit</li>
+  <li>Canary melon</li>
+  <li>Cantaloupe</li>
+  <li>Cherimoya</li>
+  <li>Cherry</li>
+  <li>Chili Pepper</li>
+  <li>Clementine (type of orange)</li>
+  <li>Cloudberry</li>
+  <li>Coconut</li>
+  <li>Cranberry</li>
+  <li>Cucumber</li>
+  <li>Currant</li>
+  <li>Damson</li>
+  <li>Date</li>
+  <li>Dragonfruit</li>
+  <li>Durian</li>
+  <li>Eggplant</li>
+  <li>Elderberry</li>
+  <li>Feijoa</li>
+  <li>Fig</li>
+  <li>Goji berry</li>
+  <li>Gooseberry</li>
+  <li>Grape</li>
+  <li>Grapefruit</li>
+  <li>Guava</li>
+  <li>Honeydew</li>
+  <li>Huckleberry</li>
+  <li>Jackfruit</li>
+  <li>Jambul</li>
+  <li>Jujube</li>
+  <li>Kiwi fruit</li>
+  <li>Kumquat</li>
+  <li>Lemon</li>
+  <li>Loquat</li>
+  <li>Lychee</li>
+  <li>Mandarine</li>
+  <li>Mango</li>
+  <li>Melon</li>
+  <li>Mulberry</li>
+  <li>Nectarine</li>
+  <li>Nut</li>
+  <li>Olive</li>
+  <li>Orange</li>
+  <li>Pamelo</li>
+  <li>Papaya</li>
+  <li>Passionfruit</li>
+  <li>Peach</li>
+  <li>Pear</li>
+  <li>Pepper</li>
+  <li>Persimmon</li>
+  <li>Physalis</li>
+  <li>Pineapple</li>
+  <li>Plum/prune (dried plum)</li>
+  <li>Pomegranate</li>
+  <li>Pomelo</li>
+  <li>Purple Mangosteen</li>
+  <li>Quince</li>
+  <li>Rambutan</li>
+  <li>Raspberry</li>
+  <li>Redcurrant</li>
+  <li>Rock melon</li>
+  <li>Salal berry</li>
+  <li>Satsuma</li>
+  <li>Star fruit</li>
+  <li>Strawberry</li>
+  <li>Tamarillo</li>
+  <li>Tangerine</li>
+  <li>Ugli fruit</li>
+  <li>Watermelon</li>
+  <li>Western raspberry (blackcap)</li>
+  <li>Williams pear or Bartlett pear</li>
+  <li>apple</li>
+  <li>apricot</li>
+  <li>avocado</li>
+  <li>banana</li>
+  <li>bell pepper</li>
+  <li>bilberry</li>
+  <li>blackberry</li>
+  <li>blackcurrant</li>
+  <li>blood orange</li>
+  <li>blueberry</li>
+  <li>boysenberry</li>
+  <li>breadfruit</li>
+  <li>canary melon</li>
+  <li>cantaloupe</li>
+  <li>cherimoya</li>
+  <li>cherry</li>
+  <li>chili pepper</li>
+  <li>clementine (type of orange)</li>
+  <li>cloudberry</li>
+  <li>coconut</li>
+  <li>cranberry</li>
+  <li>cucumber</li>
+  <li>currant</li>
+  <li>damson</li>
+  <li>date</li>
+  <li>dragonfruit</li>
+  <li>durian</li>
+  <li>eggplant</li>
+  <li>elderberry</li>
+  <li>feijoa</li>
+  <li>fig</li>
+  <li>goji berry</li>
+  <li>gooseberry</li>
+  <li>grape</li>
+  <li>grapefruit</li>
+  <li>guava</li>
+  <li>honeydew</li>
+  <li>huckleberry</li>
+  <li>jackfruit</li>
+  <li>jambul</li>
+  <li>jujube</li>
+  <li>kiwi fruit</li>
+  <li>kumquat</li>
+  <li>lemon</li>
+  <li>lime</li>
+  <li>loquat</li>
+  <li>lychee</li>
+  <li>mandarine</li>
+  <li>mango</li>
+  <li>melon</li>
+  <li>mulberry</li>
+  <li>nectarine</li>
+  <li>nut</li>
+  <li>olive</li>
+  <li>orange</li>
+  <li>pamelo</li>
+  <li>papaya</li>
+  <li>passionfruit</li>
+  <li>peach</li>
+  <li>pear</li>
+  <li>pepper</li>
+  <li>persimmon</li>
+  <li>physalis</li>
+  <li>pineapple</li>
+  <li>plum/prune (dried plum)</li>
+  <li>pomegranate</li>
+  <li>pomelo</li>
+  <li>purple mangosteen</li>
+  <li>quince</li>
+  <li>rambutan</li>
+  <li>raspberry</li>
+  <li>redcurrant</li>
+  <li>rock melon</li>
+  <li>salal berry</li>
+  <li>satsuma</li>
+  <li>star fruit</li>
+  <li>strawberry</li>
+  <li>tamarillo</li>
+  <li>tangerine</li>
+  <li>ugli fruit</li>
+  <li>watermelon</li>
+  <li>western raspberry (blackcap)</li>
+  <li>williams pear or bartlett pear</li>
+</ul>
+</body>
+</htl>
