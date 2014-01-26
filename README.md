@@ -1,6 +1,22 @@
-# Mather for user queries
+# JavaScript matcher for user queries
+
+This matcher supports some queries, like queries for search engines.
 
 
+## Download
+
+You can download the JavaScript file from the following link:
+
+http://abicky.github.io/query-matcher/lib/query-matcher.js
+
+
+You can also build the file the following steps:
+```
+$ git clone https://github.com/abicky/query-matcher.git
+$ cd ./query-matcher/
+$ npm install
+$ npm run build
+```
 
 ## Usage
 
@@ -52,3 +68,8 @@ var matcher = new QueryMatcher('-ap');
 matcher.match('apple');   // => false
 matcher.match('orange');  // => true
 ```
+
+
+## Demo
+
+http://abicky.github.io/query-matcher/
