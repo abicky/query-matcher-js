@@ -1,7 +1,7 @@
 {
   "name": "query-matcher",
   "version": "0.1.0",
-  "description": "Mather for user queries",
+  "description": "JavaScript matcher for user queries",
   "scripts": {
     "test": "jake test",
     "build": "jake build"
