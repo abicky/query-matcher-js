@@ -1,3 +1,8 @@
+###
+ Copyright (c) 2014 Takeshi Arabiki
+ licensed under the MIT license (http://opensource.org/licenses/MIT)
+###
+
 root = exports ? window
 
 class root.QueryMatcher
