@@ -1,0 +1,23 @@
+{
+  "name": "query-matcher",
+  "version": "0.1.0",
+  "description": "Mather for user queries",
+  "scripts": {
+    "test": "jake test",
+    "build": "jake build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "1.6.3",
+    "chai": "1.8.1",
+    "mocha": "1.17.1",
+    "jake": "0.7.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/abicky/query-matcher.git"
+  },
+  "homepage": "https://github.com/abicky/query-matcher",
+  "author": "Takeshi Arabiki",
+  "license": "MIT"
+}
