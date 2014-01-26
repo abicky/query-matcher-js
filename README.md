@@ -73,3 +73,13 @@ matcher.match('orange');  // => true
 ## Demo
 
 http://abicky.github.io/query-matcher/
+
+
+## Author
+
+Takeshi Arabiki (abicky)
+
+
+## Copyright and License
+
+Copyright (c) 2014 Takeshi Arabiki licensed under the [MIT license](http://opensource.org/licenses/MIT).
