@@ -41,6 +41,12 @@ describe 'QueryMatcher', ->
         expect(matcher.match 'apple' ).to.be.false
         expect(matcher.match 'orange').to.be.true
 
+    context 'with "-" and other words', ->
+      it "ignores '-'", ->
+        matcher = new QueryMatcher '- ap'
+        expect(matcher.match 'apple' ).to.be.true
+        expect(matcher.match 'orange').to.be.false
+
     context 'with multiple words and "OR"', ->
       # 'c' AND 'e' AND 'r' AND ('d' OR 'h' OR 'l' OR 'm')
       matcher = new QueryMatcher 'c d OR h e l OR m r'

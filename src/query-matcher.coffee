@@ -13,7 +13,7 @@ class root.QueryMatcher
     # to process the first word and the last word the same as other words
     for words in " #{query} ".split /\s+OR\s+/
       [afterOrWord, requiredWords..., beforeOrWord] = words.split /\s+/
-      @requiredWords.push requiredWords...
+      @requiredWords.push (word for word in requiredWords when word isnt '-')...
       # 'afterOrWord' is an empty string if 'words' is the first group
       @optionalWords.push afterOrWord  if afterOrWord
       # 'beforeOrWord' is undefined if 'words' doesn't contain spaces
