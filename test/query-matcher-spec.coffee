@@ -6,8 +6,8 @@ describe 'QueryMatcher', ->
     context 'with no words', ->
       it 'matches all items', ->
         matcher = new QueryMatcher ''
-        expect(matcher.match '' ).to.be.true
-        expect(matcher.match 'apple' ).to.be.true
+        expect(matcher.match ''     ).to.be.true
+        expect(matcher.match 'apple').to.be.true
 
     context 'with no uppercase characters', ->
       it 'matches items case insensitively', ->

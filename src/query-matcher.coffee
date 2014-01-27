@@ -29,7 +29,7 @@ class root.QueryMatcher
     return true if @optionalWords.length is 0
 
     for optionalWord in @optionalWords
-      if optionalWord.substring 0, 1 isnt '-'
+      if optionalWord.substring(0, 1) isnt '-'
         return true if _match optionalWord, str
       else  # invert match
         return true if not _match optionalWord.substring(1), str

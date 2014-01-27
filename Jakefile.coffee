@@ -1,5 +1,4 @@
-{exec} = require 'child_process'
-{spawn} = require 'child_process'
+{exec, spawn} = require 'child_process'
 
 desc 'Alias of build task'
 task 'default', ['build']
