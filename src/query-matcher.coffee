@@ -1,6 +1,7 @@
 ###
  Copyright (c) 2014 Takeshi Arabiki
  licensed under the MIT license (http://opensource.org/licenses/MIT)
+ URL: https://github.com/abicky/query-matcher-js
 ###
 
 root = exports ? window
