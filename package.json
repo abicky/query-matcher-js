@@ -1,5 +1,5 @@
 {
-  "name": "query-matcher",
+  "name": "query-matcher-js",
   "version": "0.1.0",
   "description": "JavaScript matcher for user queries",
   "scripts": {
@@ -15,9 +15,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/abicky/query-matcher.git"
+    "url": "git://github.com/abicky/query-matcher-js.git"
   },
-  "homepage": "https://github.com/abicky/query-matcher",
+  "homepage": "https://github.com/abicky/query-matcher-js",
   "author": "Takeshi Arabiki",
   "license": "MIT"
 }

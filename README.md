@@ -7,13 +7,13 @@ This matcher supports some queries, like queries for search engines.
 
 You can download the JavaScript file from the following link:
 
-http://abicky.github.io/query-matcher/lib/query-matcher.js
+http://abicky.github.io/query-matcher-js/lib/query-matcher.js
 
 
 You can also build the file by the following steps:
 ```
-$ git clone https://github.com/abicky/query-matcher.git
-$ cd ./query-matcher/
+$ git clone https://github.com/abicky/query-matcher-js.git
+$ cd ./query-matcher-js/
 $ npm install
 $ npm run build
 ```
@@ -72,7 +72,7 @@ matcher.match('orange');  // => true
 
 ## Demo
 
-http://abicky.github.io/query-matcher/
+http://abicky.github.io/query-matcher-js/
 
 
 ## Author
