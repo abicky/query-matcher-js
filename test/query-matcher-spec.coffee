@@ -35,6 +35,13 @@ describe 'QueryMatcher', ->
         expect(matcher.match 'lemon' ).to.be.true
         expect(matcher.match 'orange').to.be.false
 
+    context 'with "OR" keyword after which the word is empty', ->
+      it 'ignores the word before "OR"', ->
+        matcher = new QueryMatcher 'ap le OR '
+        expect(matcher.match 'grape' ).to.be.true
+        expect(matcher.match 'lemon' ).to.be.false
+        expect(matcher.match 'orange').to.be.false
+
     context 'with words which have "-" prefix', ->
       it "matches items which don't contain the word", ->
         matcher = new QueryMatcher '-ap'
