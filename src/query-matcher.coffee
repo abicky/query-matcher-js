@@ -1,6 +1,7 @@
 ###
  Copyright (c) 2014 Takeshi Arabiki
  licensed under the MIT license (http://opensource.org/licenses/MIT)
+ URL: https://github.com/abicky/query-matcher-js
 ###
 
 root = exports ? window
@@ -11,11 +12,12 @@ class root.QueryMatcher
     @optionalWords = []
     # prepend and append a space
     # to process the first word and the last word the same as other words
-    for words in " #{query} ".split /\s+OR\s+/
+    for words, i in " #{query} ".split /\s+OR\s+/
       [afterOrWord, requiredWords..., beforeOrWord] = words.split /\s+/
-      @requiredWords.push requiredWords...
-      # 'afterOrWord' is an empty string if 'words' is the first group
-      @optionalWords.push afterOrWord  if afterOrWord
+      @requiredWords.push (word for word in requiredWords when word isnt '-')...
+      # 'afterOrWord' is an empty string if 'words' is the first group,
+      # so ignore it, but add the word in other cases even if it is empty
+      @optionalWords.push afterOrWord  if not (afterOrWord is '' and i is 0)
       # 'beforeOrWord' is undefined if 'words' doesn't contain spaces
       @optionalWords.push beforeOrWord if beforeOrWord
 
@@ -29,7 +31,7 @@ class root.QueryMatcher
     return true if @optionalWords.length is 0
 
     for optionalWord in @optionalWords
-      if optionalWord.substring 0, 1 isnt '-'
+      if optionalWord.substring(0, 1) isnt '-'
         return true if _match optionalWord, str
       else  # invert match
         return true if not _match optionalWord.substring(1), str

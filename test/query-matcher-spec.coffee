@@ -6,8 +6,8 @@ describe 'QueryMatcher', ->
     context 'with no words', ->
       it 'matches all items', ->
         matcher = new QueryMatcher ''
-        expect(matcher.match '' ).to.be.true
-        expect(matcher.match 'apple' ).to.be.true
+        expect(matcher.match ''     ).to.be.true
+        expect(matcher.match 'apple').to.be.true
 
     context 'with no uppercase characters', ->
       it 'matches items case insensitively', ->
@@ -35,11 +35,24 @@ describe 'QueryMatcher', ->
         expect(matcher.match 'lemon' ).to.be.true
         expect(matcher.match 'orange').to.be.false
 
+    context 'with "OR" keyword after which the word is empty', ->
+      it 'ignores the word before "OR"', ->
+        matcher = new QueryMatcher 'ap le OR '
+        expect(matcher.match 'grape' ).to.be.true
+        expect(matcher.match 'lemon' ).to.be.false
+        expect(matcher.match 'orange').to.be.false
+
     context 'with words which have "-" prefix', ->
       it "matches items which don't contain the word", ->
         matcher = new QueryMatcher '-ap'
         expect(matcher.match 'apple' ).to.be.false
         expect(matcher.match 'orange').to.be.true
+
+    context 'with "-" and other words', ->
+      it "ignores '-'", ->
+        matcher = new QueryMatcher '- ap'
+        expect(matcher.match 'apple' ).to.be.true
+        expect(matcher.match 'orange').to.be.false
 
     context 'with multiple words and "OR"', ->
       # 'c' AND 'e' AND 'r' AND ('d' OR 'h' OR 'l' OR 'm')
